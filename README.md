@@ -18,10 +18,10 @@ At this point the Application will start working.<br>
 -> ReactJs, Bootstrap
 
 Initial State of App
-![alt tag](https://github.com/natagl/Test-project-dropdowns/blob/master/img/initialState.jpg)
+![alt tag](https://github.com/natagl/Test-project-dropdowns/blob/master/img/initialStage.jpg)
 
 Final State of App
-![alt tag](https://github.com/natagl/Test-project-dropdowns/blob/master/img/finalState.jpg)
+![alt tag](https://github.com/natagl/Test-project-dropdowns/blob/master/img/finalStage.jpg)
 <br>
 
 ### Contact<br>
