@@ -48,6 +48,7 @@ export const SearchButton = () => {
           lectureTitle: item.title,
           avIcon: avIconShow,
         };
+
         resultArray.push(eachSpeaker);
         return resultArray;
       }, [])

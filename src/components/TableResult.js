@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
 import Table from "react-bootstrap/Table";
+import avlogo from "./AVICON.ico";
 
 import { SpeakerContext } from "../context/dropdownContext";
 
@@ -13,7 +14,7 @@ export const TableResult = () => {
   // }, [searchResult]);
 
   return (
-    <Table show={false} striped bordered hover>
+    <Table striped bordered hover>
       <thead>
         <tr>
           <th>Speaker Name</th>
@@ -23,14 +24,16 @@ export const TableResult = () => {
         </tr>
       </thead>
       <tbody>
-        {searchResult.map(({ value, spk, sponsor, lecture, avIcon }) => (
-          <tr key={value}>
-            <td>{spk}</td>
-            <td>{sponsor}</td>
-            <td>{lecture}</td>
-            <td>{avIcon}</td>
-          </tr>
-        ))}
+        {searchResult.map(
+          ({ value, speaker, sponsor, lectureTitle, avIcon }) => (
+            <tr key={value}>
+              <td>{speaker}</td>
+              <td>{sponsor}</td>
+              <td>{lectureTitle}</td>
+              <td>{avIcon}</td>
+            </tr>
+          )
+        )}
       </tbody>
     </Table>
   );
