@@ -13,14 +13,14 @@ export const ThirdDropDown = () => {
 
   //Fetch the Category for each User
   async function getSubCategories(idCat, idSpk) {
-    console.log("getSubCategories: idSpk- " + idSpk + " ,idCat-" + idSpk);
+    // console.log("getSubCategories: idSpk- " + idSpk + " ,idCat-" + idSpk);
     const response = await fetch(
       `https://api.itorah.com/api/Categories/subfilter?CategoryID=${idCat}&SpeakerID=${idSpk}`
     );
     //Converting to Json
     const body = await response.json();
 
-    console.log(body);
+    // console.log(body);
 
     //Setting the mainSpeakers
     setsubCategory(
@@ -43,13 +43,11 @@ export const ThirdDropDown = () => {
 
   const onSubCategorySelect = (evnt, idSubCat) => {
     evnt.preventDefault();
-    console.log("Outputting from Click: " + idSubCat);
+    // console.log("Outputting from Click: " + idSubCat);
     setsubCatId(idSubCat);
   };
 
-  console.log("Second file: " + catId);
   let disableValThirdDropDown = catId == 0;
-  console.log("disableVal: " + disableValThirdDropDown);
 
   return (
     <DropdownButton
@@ -58,6 +56,7 @@ export const ThirdDropDown = () => {
       id="dropdown-basic-button"
       title="All Categories"
       variant="light"
+      className="menu"
     >
       {subCategory.map(({ label, value, lectureCount }) => (
         <Dropdown.Item

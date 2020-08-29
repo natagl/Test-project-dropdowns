@@ -14,14 +14,14 @@ export const SecondDropDown = () => {
 
   //Fetch the Category for each User
   async function getCategories(idSpk) {
-    console.log("getCategories: " + idSpk);
+    // console.log("getCategories: " + idSpk);
     const response = await fetch(
       `https://api.itorah.com/api/Categories/catfilter?SpeakerID=${idSpk}`
     );
     //Converting to Json
     const body = await response.json();
 
-    console.log(body);
+    // console.log(body);
 
     //Setting the mainSpeakers
     setCategory(
@@ -44,13 +44,11 @@ export const SecondDropDown = () => {
 
   const onCategorySelect = (evnt, idCat) => {
     evnt.preventDefault();
-    console.log("Outputting from Click: " + idCat);
+    // console.log("Outputting from Click: " + idCat);
     setcatId(idCat);
   };
 
-  console.log("Second file: " + selectedId);
   let disableValSecondDropDown = selectedId == 0;
-  console.log("disableVal: " + disableValSecondDropDown);
 
   return (
     <DropdownButton
@@ -59,6 +57,7 @@ export const SecondDropDown = () => {
       id="dropdown-basic-button"
       title="All Categories"
       variant="light"
+      className="menu"
     >
       {category.map(({ label, value, lectureCount }) => (
         <Dropdown.Item key={value} onClick={(e) => onCategorySelect(e, value)}>

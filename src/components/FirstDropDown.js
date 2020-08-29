@@ -63,7 +63,7 @@ export const FirstDropDown = () => {
 
   const onSpeakerSelect = (evnt, spkId) => {
     evnt.preventDefault();
-    console.log("Outputting from Click: " + spkId);
+    //console.log("Outputting from Click: " + spkId);
     setselectedId(spkId);
   };
 

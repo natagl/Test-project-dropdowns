@@ -15,24 +15,24 @@ export const SearchButton = () => {
 
   //Fetch the Category for each User
   async function getSearchResults() {
-    console.log(
+    /*console.log(
       "getSearchResults: idSpk- " +
         selectedId +
         " ,idCat-" +
         catId +
         " ,idSubCat-" +
         subCatId
-    );
+    );*/
     const idSpk = selectedId;
     const idCatOrSubCat = subCatId != 0 ? subCatId : catId;
-    console.log(idCatOrSubCat);
+    // console.log(idCatOrSubCat);
     const response = await fetch(
       `https://api.itorah.com/api/Shiurim/all?PageIndex=1&PageSize=20&CategoryID=${idCatOrSubCat}&SpeakerID=${selectedId}`
     );
     //Converting to Json
     const body = await response.json();
 
-    console.log(body.shiurList);
+    // console.log(body.shiurList);
 
     setsearchResult(
       //Filter out Main Speakers
@@ -57,11 +57,12 @@ export const SearchButton = () => {
 
   const onSearchButtonClick = (evnt) => {
     evnt.preventDefault();
-    console.log("SEARCH BUTTON CLICKED");
-    getSearchResults();
-    console.log("After search updated");
-    console.log(searchResult);
-    //setsubCatId(idSubCat);
+    //console.log("SEARCH BUTTON CLICKED");
+    if (selectedId != 0 && (catId != 0 || subCatId != 0)) {
+      getSearchResults();
+    } else {
+      alert("Please select proper values from DropDown");
+    }
   };
 
   return (
