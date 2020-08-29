@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-
-import { TableResult } from "./TableResult";
+import React, { useContext } from "react";
 
 import Button from "react-bootstrap/Button";
 
@@ -23,7 +21,6 @@ export const SearchButton = () => {
         " ,idSubCat-" +
         subCatId
     );*/
-    const idSpk = selectedId;
     const idCatOrSubCat = subCatId != 0 ? subCatId : catId;
     // console.log(idCatOrSubCat);
     const response = await fetch(
