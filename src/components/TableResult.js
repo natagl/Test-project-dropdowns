@@ -5,6 +5,10 @@ import avlogo from "./AVICON.ico";
 
 import { SpeakerContext } from "../context/dropdownContext";
 
+function imageFormatter(cell, row) {
+  return "<img src='./AVICON.ico'/>";
+}
+
 export const TableResult = () => {
   const { value4 } = useContext(SpeakerContext);
   const [searchResult, setsearchResult] = value4;
@@ -30,7 +34,15 @@ export const TableResult = () => {
               <td>{speaker}</td>
               <td>{sponsor}</td>
               <td>{lectureTitle}</td>
-              <td>{avIcon}</td>
+              <td>
+                <div>
+                  {avIcon ? (
+                    <img style={{ height: "20%", width: "20%" }} src={avlogo} />
+                  ) : (
+                    {}
+                  )}
+                </div>
+              </td>
             </tr>
           )
         )}

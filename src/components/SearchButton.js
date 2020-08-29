@@ -38,7 +38,7 @@ export const SearchButton = () => {
       //Filter out Main Speakers
       body.shiurList.reduce((resultArray, item) => {
         let avIconShow = false;
-        if (item.video != "" || item.audio != "") {
+        if (item.video !== "" || item.audio !== "") {
           avIconShow = true;
         }
         var eachSpeaker = {
